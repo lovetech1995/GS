@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Script Blog</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div id="main" class="container">
+        <!--##//1.Navigation bar//##-->
+        <nav class="navbar">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="home.html">
+                    <span class="logo">APP</span> SCRIPT
+                </a>
+              </div>
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="home.html">Home</a></li>
+                <li><a href="learning.html">Learning</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <!--li><a href="#">Contact</a></!--li>-->
+              </ul>
+            </div>
+        </nav>
+        <!--##//2.Basic Body//##-->
+
+        <div id="body">
+            <h1>&#128218; <b>#2.Automate to Send An Email</b></h1>
+            <h4>Questions & Answer:</h4>
+            <ol>
+                <li><b>Tôi đã quen với việc gửi email hằng ngày, tại sao phải tự động hóa ?</b> &#128073; Một hai cái email thì không nói làm gì. Tùy vào tính chất công việc, đôi lúc bạn phải send email cho một tập thể hàng trăm người thì mới cần quản lý và tự động !!</li>
+                <li><b>Nhưng mà email cũng có chức năng gửi đồng loạt, hay đơn giản hơn tôi có thể group mọi người chung 1 email, Làm chi cho phức tạp vậy ?</b> &#128073; Đương nhiên gmail có thể hỗ trợ function để làm việc đó. Nhưng nếu mỗi cái email bạn phải thay đổi nội dung thì sao ? Trong khi đó, công ty vẫn chưa hỗ trợ tool nào để quản lý danh sách người gửi cả ?? Bạn sẽ phải mất cả tuần để làm nó !</li>
+                <li><b>Nó có khó không ? tôi rất ghét học những thứ phức tạp !</b> &#128073; Nó không khó nhé! Chỉ cần bạn xài nhiều bạn sẽ quen. Nó sẽ giúp bạn tiết kiệm thời gian một cách tối đa nếu như bạn ứng dụng đúng ! Nhiều khi nó còn là điểm sáng cho bạn đấy. </li>
+            </ol>   
+            <br>
+            <h4>Đề bài như sau:</h4>
+            <div class="alert alert-info">
+                &#9201; Hôm nay tôi phải gửi email cho 200 nhân viên, mỗi nhân viên tôi phải thông báo một vấn đề khác nhau ! Hạn đến ngày mai tôi phải gửi xong, Làm sao đây ?    
+            </div>
+            <br>
+            <div style="width: 100; text-align: center;">
+                <img style="width: 100%; border: 1px dashed rgb(90, 89, 89)" src="img/auto_gmail2.PNG">
+            </div>
+            <br> 
+            <b>&#9940; Hey hey ! Stop ! bạn tính dành cả tuần để gửi email viết tay cho 200 người như thế này hay sao ?? &#128073; Vậy giờ là lúc sử dụng App Script đấy!</b>   
+            <br>
+            <br>
+            <h4>Action Lists:</h4>
+            <ul>
+                <li><b>Bước 1:</b> Cái gì cũng vậy, đầu tiên mình phải tạo một project script mới bằng cách <b>Tool</b> > <b>Script Editor</b></li>
+                <li><b>Bước 2:</b> Nhập dòng code bên dưới vào khung script editor, lần này tôi sẽ giải thích từng dòng code luôn ở đây !</li>
+                <br>
+    <pre><code> function AutomateGmail(){
+        var ss = SpreadsheetApp.getActiveSpreadsheet(); //---> Active Sheet của bạn, đây là thư viện của google app script 
+        var ws = ss.getSheetByName('Sheet1'); // ---> Chọn Sheet 1, cũng chính là sheet chứa danh sách email mà bạn muốn gửi 
+        var n = ws.getRange("A1").getDataRegion().getLastRow() - 1; // ---> Lấy số cuối cùng trong danh sách gửi mail 
+        var data = ws.getRange(2,1,n,3).getValues(); // ---> Lấy hết data dữ liệu bao gồm cột email, cột title, cột nội dung
+        var email = data.map(function(r){return r[0];}); // ---> Chuyển data về dữ liệu cột người gửi
+        var title = data.map(function(r){return r[1];}); // ---> Chuyển data về dữ liệu cột chủ đề
+        var content = data.map(function(r){return r[2];});  // ---> Chuyển data về dữ liệu cột nội dung
+      
+        //Logger.log(name); // ---> In ra xem kết quả đúng hay sai, nhưng trước mắt không cần line code này
+      
+        for(var i=0; i <= n;i++) // ---> bắt đầu hàm lặp for, tạo biến i, cho biến i chạy từ 0 đến dòng cuối, hết vòng lặp i sẽ tăng thêm 1
+        {                                                        // --> mở vòng lặp
+          GmailApp.sendEmail(email[i],title[i],content[i]);      // ---> gửi email theo số thứ tự dòng, gửi đến hết danh sách
+        }                                                        // ---> đóng vòng lặp
+    }</code></pre>
+                <br>
+                <li><b>Bước 3:</b> Lưu dòng code này lại, và click vào nút <b>RUN</b></li>
+                <br>
+                <div style="width: 100%; text-align: center;">
+                    <img style="width: 40%;" src="img/auto_gmail4.PNG">
+                </div>
+                <br>
+                <li><b>Bước 4:</b> Sẽ có pop-up hỏi bạn về quyền Access, bạn cứ việc Grant Access cho nó và check email để tận hưởng thành quả nhé !! Rất nhanh và gọn</li>
+            </ul>      
+            <br>
+            <h4>Kết Luận:</h4>
+            <p>Không biết các bạn nghĩ như nào, chứ riêng bản thân tôi thấy cách này rất chi là tiện. Tại sao thế ?? Vì bạn chỉ việc check kỹ các email nội dung, chủ đề và sắp chúng đúng thứ tự trong danh sách bạn muốn. Rất nhanh thôi bạn có thể gửi email vừa dễ, gọn và không cần phải lên Gmail nhé !</p>      
+            <h3>&#128073; Bài này là để cho các bạn hiểu code cơ bản theo dòng, Hãy đón xem bài hướng dẫn tiếp theo nhé !</h3>
+        </div>
+    </div>
+
+
+
+<!--This is footer Area-->
+<footer class="end">
+    <div class="container">
+        <b>Author:</b> Nghia Le 
+        | <b>Gmail:</b><a href="#">+leminhnghia111095@gmail.com</a>
+    </div>
+</footer>
+</body>
+</html>

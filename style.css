@@ -1,0 +1,124 @@
+.logo {
+    color:navy;
+    font-weight: bold;
+}
+
+.navbar-brand {
+   color: black;
+   font-size: 25px;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Gill Sans", sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    color: inherit;
+}
+
+
+.banner {
+    text-align: center;
+    width: 45%;
+    height: auto;
+}
+
+.banner1 {
+    text-align: center;
+    width: 30%;
+    margin: 30px;
+}
+
+.list-lession {
+    color:crimson;
+}
+
+.end {
+    padding: 30px;
+}
+
+code {
+    font-family: Consolas,"courier new";
+    color: crimson;
+    background-color: #f1f1f1;
+    padding: 2px;
+    font-size: 105%;
+  }
+
+.border-img {
+    border: 1px dashed rgb(109, 108, 108);
+    width: 45%;
+}  
+
+.code {
+    width: auto;
+}
+
+
+
+.mt-100 {
+    margin-top: 100px
+}
+
+.mb-100 {
+    margin-bottom: 100px
+}
+
+.card {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 0px solid transparent;
+    border-radius: 0px
+}
+
+.card-body {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem
+}
+
+.card .card-title {
+    position: relative;
+    font-weight: 600;
+    margin-bottom: 10px
+}
+
+ul.list-style-none li {
+    list-style: none
+}
+
+ul.list-style-none li a {
+    color: #673AB7;
+    padding: 8px 0px;
+    display: block;
+    text-decoration: none
+}
+
+.m-t-5 {
+    margin-top: 5px
+}
+
+.w-30px {
+    width: 30px
+}
+
+.from {
+    width: 40%;
+    padding: 40px;
+    border: 0.6px solid rgba(165, 165, 165, 0.5);
+}
+
+#cmt {
+    height: 100px;
+}

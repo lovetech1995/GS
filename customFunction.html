@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Script Blog</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div id="main" class="container">
+        <!--##//1.Navigation bar//##-->
+        <nav class="navbar">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="home.html">
+                    <span class="logo">APP</span> SCRIPT
+                </a>
+              </div>
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="home.html">Home</a></li>
+                <li><a href="learning.html">Learning</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <!--li><a href="#">Contact</a></!--li>-->
+              </ul>
+            </div>
+        </nav>
+        <!--##//2.Basic Body//##-->
+
+        <div id="body">
+            <h1>&#128218; <b>#1.Custom Function</b></h1>
+            <h4>Questions & Answer:</h4>
+            <ol>
+                <li><b>Function là gì, nghe lạ quá ??</b> &#128073; Function là cái này <code>=SUM(A1)</code>, <code>=VLOOKUP(A1,B1:K,2,0)</code> </li>
+                <li><b>Tại sao phải custom?</b> &#128073; Vì chúng ta muốn tính toán nhanh hơn theo ý của chúng ta</li>
+                <li><b>Không tạo thì giải quyết được vấn đề không ?</b> &#128073; Vẫn giải quyết được !! Bởi vì hàm của Google đã đủ xài cho các bạn rồi, tuy nhiên để xử lý từ đầu đến cuối phải kết hợp các function lại với nhau, và nếu quá trình tính toán phức tạp bạn sẽ dễ nhầm lẫn và tốn rất nhiều công sức, vậy nên học để giảm tải sai sót </li>
+                <li><b>Rườm rà, theo văn phòng chứ đâu phải theo code đâu, học chi tốn thời gian??</b> &#128073; Nó cũng giống như chuyện bạn sử dụng VBA trong excel, nó giúp bạn tối ưu hóa quá trình tính toán, việc sở hữu kỹ năng này không những giúp bạn nổi bật trong mắt đồng nghiệp mà nó còn tạo điểm nhấn cho bạn để bạn được thăng tiến cao hơn. Nhưng tôi không ép, tùy bạn !!</li> 
+                <li><b>Tôi thử học code nhiều rồi, tôi học không vô ??</b>&#128073; bạn nên có bài toán ứng dụng thực tế, tôi sẽ giúp bạn một phần, phần còn lại bạn phải tự tìm hiểu mới có ý nghĩa!! Chúc bạn thành công </li>
+            </ol>   
+            <br>
+            <h4>Đề bài như sau:</h4>
+            <div class="alert alert-info">
+                &#9201; Phân loại số tuổi trong cột ! Nếu sử dụng hàm GS nó sẽ thành ra thế này <code>=IF(A2<2,"too young",if(and(A2>2,A2<4),"young","enough"))</code>, Nó có dài và gõ lâu quá không ??
+            </div>
+            <div style="width: 100; text-align: center;">
+                <img class="border-img" src="img/sotuoi.png">
+            </div>
+            <br>
+            <p>&#128073; Bạn hoàn toàn có thể chuyển công thức trên chỉ đơn giản như vầy <code>=PhanLoaiTuoi(A2)</code>, dễ không ?? Rất dễ, nhưng khoan, hãy đọc cơ bản về tạo <a href="projectCreation.html">project script</a> đã rồi mình bắt đầu nhé !!</p>
+            <br>
+            <h4>Action Lists:</h4>
+            <ul>
+                <li><b>Bước 1:</b> Tạo một project script mới bằng cách <b>Tool</b> > <b>Script Editor</b></li>
+                <li><b>Bước 2:</b> Nhập dòng code bên dưới vào khung script editor</li>
+                <br>
+    <pre><code> function PhanLoaiTuoi(input){
+        if(input < 2){
+            var output = 'too young'
+        } else if (input < 4 && input >2){
+            var output = 'young'
+        } else {var output = 'enough'}
+            return output;
+        }</code></pre>
+                <li><b>Bước 3:</b> Lưu code, quay trở về trang tính mở <b>Tool</b> > <b>Macros</b> > <b>Import</b> và chọn function mình vừa tạo</li>
+                <li><b>Bước 4:</b> Thực hành với function như hình, gõ <code>=PhanLoaiTuoi(A2)</code> và nhập ô mà mình muốn phân loại và xem thành quả nhé !</li>
+                <br>
+                <div style="width: 100; text-align: left;">
+                    <img class="border-img" src="img/done2.PNG">
+                </div>
+            </ul>
+            <br>
+            <h4>Kết Luận:</h4>
+            <p>Giữa hai hàm mà bạn gọi ra để tính toán là hàm <code>=IF(A2<2,"too young",if(and(A2>2,A2<4),"young","enough"))</code> và hàm <code>=PhanLoaiTuoi(A2)</code>, thì dĩ nhiên là chúng ta sẽ thích hàm bên phải hơn rồi đúng không, vì nó dễ và dù có sai chúng ta chỉ cần sửa một lần trong Script Editor mà thôi</p>
+            <h3>&#128073; Đây là những bước đi đầu tiên và cần thiết để bạn làm quen với Script Editor, sẽ còn nhiều điều thú vị hơn ở bài tiếp theo !! Thank you for following</h3>
+            <h3>&#128073; Cùng tìm hiểu <a href="automate_send_email.html">Automate to send Email</a></h3>
+        </div>
+    </div>
+
+
+
+<!--This is footer Area-->
+<footer class="end">
+    <div class="container">
+        <b>Author:</b> Nghia Le 
+        | <b>Gmail:</b><a href="#">+leminhnghia111095@gmail.com</a>
+    </div>
+</footer>
+</body>
+</html>
