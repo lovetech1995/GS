@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Script Blog</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div id="main" class="container">
+        <!--##//1.Navigation bar//##-->
+        <nav class="navbar">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="home.html">
+                    <span class="logo">APP</span> SCRIPT
+                </a>
+              </div>
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="home.html">Home</a></li>
+                <li><a href="learning.html">Learning</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <!--<li><a href="#">Contact</a></li>-->
+              </ul>
+            </div>
+        </nav>
+        <!--##//2.Basic Body//##-->
+
+        <div id="body">
+            <h1>&#128218; <b>#Grant Access: Cấp phép cho Projects</b></h1>
+            <br> 
+            <h3 style="color:darkred">&#128273; <b>Tạo Dự án lần đầu, bắt buộc phải Grant Access</b></h3>
+            <p>Bởi vì chúng ta cần tuân thủ các nguyên tắc của Google là cho phép App Script có quyền tương tác với các dữ liệu và thông tin được lưu trữ bên trong tệp. Nói đơn giản hơn là cho phép mọi sự thay đổi về các nền tảng khác từ script này và Google sẽ không chịu trách nhiệm nếu như Script này mang rủi ro (Cũng đừng quá lo lắng, bởi vì chúng ta là người viết script, nó sẽ chỉ mang rủi ro khi bạn cấp quyền cho một script chưa xác thực hoặc mượn từ những nguồn không đáng tin cậy). </p>
+            <br>
+            <h4>&#128073; Vậy hãy thực hiện các bước sau đây để cấp quyền cho script nhé !!</h4>
+            <ul>
+                <li><b>Bước 1:</b> Cửa sổ pop-up sẽ xuất hiện khi bạn thực hiện câu lệnh tương tác với Sheet lần đầu ! Tại đây chọn <b>Review Permissions</b></li>
+                <br>
+                <div style="width: 100; text-align: left;">
+                    <img style="width: 40%;" src="img/grant-access-1.PNG">
+                </div>
+                <br>
+                <li><b>Bước 2:</b> Chọn gmail của bạn, sau đó sẽ có một cửa sổ khác hiện lên và đưa ra cảnh báo về script (do là script tự viết nên Google nó cảnh báo để phía họ không phải chịu bất cứ trách nhiệm gì về script này, vậy thôi). Tới đây bạn cứ click chọn <b>Advanced</b> </li>
+                <br>
+                <div style="width: 100; text-align: left;">
+                    <img class="border-img" src="img/grant-access-2.PNG">
+                </div>  
+                <br>
+                <li><b>Bước 3:</b> Chọn dòng text <b>Go to Project (unsafe)</b> để tiếp tục cấp quyền cho script</li>
+                <br>
+                <div style="width: 100; text-align: left;">
+                    <img class="border-img" src="img/grant-access-3.PNG">
+                </div> 
+                <br>
+                <li><b>Bước 4:</b> Chọn nút <b>Allow</b> để hoàn thành !! Như vậy là bạn đã hoàn chỉnh các bước để Grant Access một dự án rồi đó !!</li>
+                <br>
+                <div style="width: 100; text-align: left;">
+                    <img style="width: 30%;" src="img/grant-access-4.PNG">
+                </div> 
+                <br>                    
+            </ul>
+            <h3>&#128073; Những điều này sẽ giúp bạn dễ dàng hơn trong các chia sẻ tiếp theo, Thank you !!</h3>
+            <h3>&#128073; Cùng tìm hiểu <a href="customFunction.html">customFunction</a></h3>
+        </div>
+    </div>
+
+
+
+<!--This is footer Area-->
+<footer class="end">
+    <div class="container">
+        <b>Author:</b> Nghia Le 
+        | <b>Gmail:</b><a href="#">+leminhnghia111095@gmail.com</a>
+    </div>
+</footer>
+</body>
+</html>
