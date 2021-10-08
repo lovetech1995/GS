@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Script Blog</title>
+    <link rel="shortcut icon" type="image/png" href="https://iconape.com/wp-content/files/dh/374545/png/374545.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div id="main" class="container">
+        <!--##//1.Navigation bar//##-->
+        <nav class="navbar">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="home.html">
+                    <span class="logo">APP</span> SCRIPT
+                </a>
+              </div>
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="home.html">Home</a></li>
+                <li><a href="learning.html">Learning</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <!--li><a href="#">Contact</a></!--li>-->
+              </ul>
+            </div>
+        </nav>
+        <!--##//2.Basic Body//##-->
+
+        <div id="body">
+            <h1>&#128218; <b>#3.Button & Draw Button</b></h1>
+            <br>
+            <h3 style="font-weight:600;">&#128064; Button trông nó như thế nào ?</h3>
+            <div class="less-box"><hr></div>                
+            <p><b>Button</b> là nút ấn để kích hoạt đoạn script bên ngoài Editor, và trông nó đơn giản như vầy</p>
+            <div>
+                <img class="dash-border" style="width: 50%;" src="img/button1.PNG">
+            </div>
+            <br>
+            <p>Ngoài ra, chúng ta có thể vẽ một button nằm ngoài WorkSheet, thì nó sẽ là <b>Draw Button</b></p>
+            <div >
+                 <img class="dash-border" style="width: 50%;" src="img/button2.PNG">
+            </div>
+
+            <br>
+            <h3 style="font-weight:600;">&#128308; Tạo Button như thế nào ??</h3>
+            <div class="less-box"><hr></div>      
+            <p>Giờ mình tạo một button in ra chữ <b>Hello World</b> để làm ví dụ nhé</p>
+            <br>
+            <h4>Đề bài như sau:</h4>
+            <div class="alert alert-info" style="text-align: center;">
+                &#9201; Tạo Button kích hoạt script trong Code Editor với hành động in ra một dòng chữ <b>Hello World</b>
+            </div> 
+            <br>
+            <h4>&#127752; Để tạo button trên thanh Tool-Bar bạn hãy làm theo những bước sau</h4>
+            <div class="less-box"><hr></div>    
+            <ul>
+                <li><b>Bước 1: </b> Tạo một project script &#128073; <a href="projectCreation.html">  Đọc bài Project Script</a></li>
+                <li><b>Bước 2:</b> Nhập dòng code bên dưới vào khung script editor, với giải thích như bên dưới!</li>
+                <br>
+    <pre><code>// Function thứ 1 là khởi tạo nút trên thanh tool-bar
+    function onOpen(e){
+          var ui = SpreadsheetApp.getUi(); // ---> Truy xuất vào giao diện user interface của worksheet
+          var Menu = ui.createMenu('Pop Up'); // ---> Tạo một Menu với tên là Pop Up
+          Menu.addItem('Say Hello World','Popup').addToUi(); //--->Tạo một thao tác với tên là Say Hello World, khi nhấn vào thao tác sẽ kích script Pop up
+    };
+            
+    // Function thứ 2 là đoạn script kích hoạt cửa sổ thông báo trên Worksheet 
+        
+    function Popup() {   
+          Browser.msgBox('hello world'); // ---> Mở bảng thông báo với dòng chữ hello world
+    };
+        
+    }</code></pre>
+                <br>
+                <li><b>Bước 3:</b> Lưu dòng code này lại, và click vào nút <b>RUN</b></li>
+                <br>
+                <div style="width: 100%; text-align: left;">
+                    <img style="width: 40%;" src="img/button3.PNG">
+                </div>
+                <br>
+                <li><b>Bước 4:</b> Trên thanh công cụ xuất hiện nút PopUp, chúng ta click chọn để kích hoạt đoạn script. Kết quả như hình</li>
+                <br>
+                <div style="width: 100%; text-align: left;">
+                    <img style="width: 20%;" src="img/button5.PNG">
+                </div>
+            </ul>   
+            <br>
+            <h4>&#127752; Để tạo button trên thanh WorkSheet, các bạn làm như sau</h4>
+            <div class="less-box"><hr></div>    
+            <ul>
+                <li><b>Bước 1,2:</b> Làm tương tự như bước ở trên</li>
+                <li><b>Bước 3:</b> Chúng ta chọn vào công cụ vẽ ở ngoài tool-bar bằng cách click  <b>Insert</b> > <b>Drawing</b>, sau đó chọn công cụ vẽ hình chữ nhật để vẽ cho mình một nút nhấn </li>
+                <br>
+                <div style="width: 100%; text-align: left;">
+                    <img style="width: 50%;" src="img/button6.PNG">
+                </div>
+                <br>
+                <li><b>Bước 4:</b> Sau khi vẽ xong click phải vào hình chữ nhật chọn <b>Edit Text</b>, điền Pop Up và căn chỉnh định dạng (Ở đây các thao tác gần như giống Doc, nên rất đơn giản, bạn cứ làm thôi nhé! ). Sau khi xong nhấn <b>Save and Close</b> chúng ta sẽ có một cái nút Pop Up như hình  </li>
+                <br>
+                <div style="width: 100%; text-align: left;">
+                    <img style="width: 50%;" src="img/button8.PNG">
+                </div>
+                <br>
+                <li><b>Bước 4:</b> Click chuột phải chọn <b>Assign Script</b>, sau đó gõ đoạn tên hàm Pop Up Editor Code.</li>
+                <br>
+                <div style="width: 100%; text-align: left;">
+                    <img style="width: 20%;" src="img/button9.PNG">
+                </div>
+                <br>  
+                <li><b>Bước 5:</b> Nhấn vào Nút vừa tạo để tận hưởng thành quả như trên</li>           
+            </ul>
+            <h3>&#128073; Đã xong rồi đó, bài này chủ yếu là để cho các bạn hiểu về nút và cách ứng dụng của nó. Hãy đón xem bài hướng dẫn tiếp theo nhé !</h3>
+        </div>
+    </div>
+
+
+
+<!--This is footer Area-->
+<footer class="end">
+    <div class="container">
+        <b>Author:</b> Nghia Le 
+        | <b>Gmail:</b><a href="#">+leminhnghia111095@gmail.com</a>
+    </div>
+</footer>
+</body>
+</html>

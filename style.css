@@ -122,3 +122,15 @@ ul.list-style-none li a {
 #cmt {
     height: 100px;
 }
+
+
+.less-box {
+    margin-right: 500px;
+}
+
+
+.dash-border {
+    width: 100%; 
+    text-align: left;
+    border: 0.6px dashed rgba(165, 165, 165, 0.8);
+}
