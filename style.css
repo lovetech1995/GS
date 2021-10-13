@@ -113,10 +113,8 @@ ul.list-style-none li a {
     width: 30px
 }
 
-.from {
-    width: 40%;
-    padding: 40px;
-    border: 0.6px solid rgba(165, 165, 165, 0.5);
+.form {
+    border: 0.5 solid rgba(0,0,0,0.3);
 }
 
 #cmt {
